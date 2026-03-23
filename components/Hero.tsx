@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { heroContent } from "@/data/content";
-import { ArrowDown, FileText } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 
 function useTypewriter(words: string[], typingSpeed = 80, deletingSpeed = 50, pauseMs = 2000) {
   const [text, setText] = useState("");
@@ -151,15 +151,12 @@ export default function Hero() {
             View Projects
             <ArrowDown size={16} className="animate-bounce" />
           </button>
-          <a
-            href={heroContent.cvPath}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             className="btn-secondary"
           >
-            <FileText size={16} />
-            Download CV
-          </a>
+            Contact Me
+          </button>
         </motion.div>
 
         {/* Scroll indicator — bottom left */}

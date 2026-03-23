@@ -20,6 +20,11 @@ const WELCOME_MESSAGE: Message = {
   timestamp: new Date(),
 };
 
+interface ChatbotProps {
+  externalOpen?: boolean;
+  onExternalOpenHandled?: () => void;
+}
+
 function formatMarkdown(text: string): string {
   return text
     .replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-slate-900 dark:text-white">$1</strong>')
@@ -29,7 +34,7 @@ function formatMarkdown(text: string): string {
     .replace(/\n/g, "<br />");
 }
 
-export default function Chatbot() {
+export default function Chatbot({ externalOpen, onExternalOpenHandled }: ChatbotProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([WELCOME_MESSAGE]);
   const [input, setInput] = useState("");
@@ -54,6 +59,13 @@ export default function Chatbot() {
     }
     if (isOpen) setHasUnread(false);
   }, [isOpen]);
+
+  useEffect(() => {
+    if (externalOpen && !isOpen) {
+      setIsOpen(true);
+      onExternalOpenHandled?.();
+    }
+  }, [externalOpen, isOpen, onExternalOpenHandled]);
 
   const sendMessage = async (text: string) => {
     if (!text.trim() || isLoading) return;

@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -11,9 +14,11 @@ import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
 
 export default function Home() {
+  const [chatbotOpen, setChatbotOpen] = useState(false);
+
   return (
     <main className="relative">
-      <Navbar />
+      <Navbar onOpenChatbot={() => setChatbotOpen(true)} />
       <Hero />
       <About />
       <Experience />
@@ -23,7 +28,7 @@ export default function Home() {
       <Coursework />
       <Contact />
       <Footer />
-      <Chatbot />
+      <Chatbot externalOpen={chatbotOpen} onExternalOpenHandled={() => setChatbotOpen(false)} />
     </main>
   );
 }

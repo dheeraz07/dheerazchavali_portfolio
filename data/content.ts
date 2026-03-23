@@ -39,10 +39,15 @@ export interface Project {
   badge?: string;
 }
 
+export interface SkillItem {
+  name: string;
+  description: string;
+}
+
 export interface SkillCategory {
   title: string;
   icon: string;
-  skills: string[];
+  skills: SkillItem[];
 }
 
 export interface EducationEntry {
@@ -95,6 +100,7 @@ export const navLinks: NavLink[] = [
   { label: "Skills", href: "#skills" },
   { label: "Education", href: "#education" },
   { label: "Coursework", href: "#coursework" },
+  { label: "ChatBot", href: "#chatbot" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -241,50 +247,72 @@ export const projects: Project[] = [
 // ─── Skills ───────────────────────────────────────────────────
 export const skillCategories: SkillCategory[] = [
   {
-    title: "Programming",
+    title: "Programming Languages",
     icon: "code",
-    skills: ["Python", "R", "Java", "C++", "SQL", "TypeScript"],
+    skills: [
+      { name: "Python", description: "Primary language for ML, data engineering, and research — 5+ years of production use" },
+      { name: "R", description: "Statistical computing and data visualization for academic research" },
+      { name: "Java", description: "Object-oriented development for enterprise applications and data pipelines" },
+      { name: "C++", description: "High-performance computing and algorithm-intensive applications" },
+      { name: "SQL", description: "Complex queries, window functions, and optimization across Redshift, Postgres, and BigQuery" },
+      { name: "TypeScript", description: "Type-safe full-stack development with Next.js and React" },
+    ],
   },
   {
-    title: "ML / AI",
+    title: "Machine Learning & AI",
     icon: "brain",
     skills: [
-      "PyTorch",
-      "TensorFlow",
-      "Scikit-learn",
-      "XGBoost",
-      "HuggingFace",
-      "LangChain",
-      "RAG",
-      "spaCy",
-      "LSTM",
-      "Transformers",
+      { name: "PyTorch", description: "Deep learning research and production model training — CNNs, RNNs, Transformers" },
+      { name: "TensorFlow", description: "End-to-end ML pipelines from prototyping to TFServing deployment" },
+      { name: "Scikit-learn", description: "Classical ML models, feature engineering, and model evaluation workflows" },
+      { name: "XGBoost", description: "Gradient boosting for tabular data — predictive maintenance and risk models" },
+      { name: "HuggingFace", description: "Fine-tuning and deploying transformer models for NLP and text generation" },
+      { name: "LangChain", description: "Building RAG pipelines, agent workflows, and LLM-powered applications" },
+      { name: "RAG Systems", description: "Semantic chunking, re-ranking, and knowledge base retrieval at enterprise scale" },
+      { name: "spaCy", description: "Production NLP pipelines — NER, dependency parsing, and text classification" },
+      { name: "Transformers", description: "Attention-based architectures for NLP, vision, and multimodal tasks" },
+      { name: "LSTM / RNNs", description: "Sequence modeling for time-series forecasting and temporal pattern recognition" },
     ],
   },
   {
-    title: "Cloud & Data",
+    title: "Cloud & Data Engineering",
     icon: "cloud",
     skills: [
-      "AWS (Bedrock, SageMaker, S3, Glue, Redshift)",
-      "Azure",
-      "Spark",
-      "Kafka",
-      "Airflow",
-      "Databricks",
-      "Neo4j",
+      { name: "AWS Bedrock", description: "Enterprise LLM deployment with knowledge bases and contextual guardrails" },
+      { name: "AWS SageMaker", description: "Model training, hyperparameter tuning, and MLflow experiment tracking" },
+      { name: "AWS S3 / Glue / Redshift", description: "Data lake architecture, ETL orchestration, and warehousing" },
+      { name: "Azure", description: "Cloud-native ML services and data pipeline orchestration" },
+      { name: "Apache Spark", description: "Distributed data processing for large-scale analytics and feature engineering" },
+      { name: "Kafka", description: "Real-time event streaming and data pipeline ingestion" },
+      { name: "Airflow", description: "Workflow orchestration for scheduled ML training and data pipelines" },
+      { name: "Databricks", description: "Unified analytics platform for collaborative data science" },
+      { name: "Neo4j", description: "Graph database for knowledge graphs and multi-hop retrieval" },
     ],
   },
   {
-    title: "Quant / Analytics",
+    title: "Quantitative Methods",
     icon: "chart",
     skills: [
-      "Time-Series Analysis",
-      "Statistical Inference",
-      "Bayesian Methods",
-      "Convex Optimization",
-      "Plotly",
-      "Tableau",
-      "Power BI",
+      { name: "Time-Series Analysis", description: "ARIMA, GARCH, and neural forecasting for financial and sensor data" },
+      { name: "Statistical Inference", description: "Hypothesis testing, confidence intervals, and causal analysis" },
+      { name: "Bayesian Methods", description: "Probabilistic modeling, prior elicitation, and posterior inference" },
+      { name: "Convex Optimization", description: "Constrained optimization for portfolio allocation and model training" },
+      { name: "Stochastic Processes", description: "Markov chains, Brownian motion, and Monte Carlo simulation" },
+      { name: "Risk Modeling", description: "VaR, CVaR, and ensemble approaches for financial risk quantification" },
+    ],
+  },
+  {
+    title: "Tools & Visualization",
+    icon: "tools",
+    skills: [
+      { name: "Plotly", description: "Interactive dashboards and financial data visualization" },
+      { name: "Tableau", description: "Business intelligence dashboards for stakeholder reporting" },
+      { name: "Power BI", description: "Enterprise analytics and KPI tracking dashboards" },
+      { name: "MLflow", description: "Experiment tracking, model registry, and reproducible ML workflows" },
+      { name: "Weights & Biases", description: "Experiment logging, hyperparameter sweeps, and model comparison" },
+      { name: "Git / GitHub", description: "Version control, CI/CD workflows, and collaborative development" },
+      { name: "Docker", description: "Containerized model serving and reproducible development environments" },
+      { name: "Jupyter", description: "Interactive research notebooks for prototyping and analysis" },
     ],
   },
 ];

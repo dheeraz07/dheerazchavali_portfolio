@@ -4,9 +4,13 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
 import { navLinks } from "@/data/content";
-import { Sun, Moon, Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 
-export default function Navbar() {
+interface NavbarProps {
+  onOpenChatbot?: () => void;
+}
+
+export default function Navbar({ onOpenChatbot }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -21,7 +25,9 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
-      const sections = navLinks.map((l) => l.href.replace("#", ""));
+      const sections = navLinks
+        .filter((l) => l.href !== "#chatbot")
+        .map((l) => l.href.replace("#", ""));
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i]);
         if (el) {
@@ -52,16 +58,22 @@ export default function Navbar() {
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
+    if (href === "#chatbot") {
+      onOpenChatbot?.();
+      return;
+    }
     const el = document.querySelector(href);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     }
   };
 
+  const isDark = theme === "dark";
+
   return (
     <>
       <motion.nav
-        className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
+        className={`fixed left-0 right-0 top-0 z-50 transition-all duration-500 ${
           scrolled
             ? "border-b border-slate-200/10 bg-white/80 shadow-sm backdrop-blur-xl dark:border-white/[0.06] dark:bg-surface-900/80"
             : "bg-transparent"
@@ -110,49 +122,39 @@ export default function Navbar() {
               );
             })}
 
-            {/* Theme toggle */}
+            {/* Sliding theme toggle */}
             {mounted && (
               <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="ml-4 rounded-lg p-2 text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-700 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-white"
+                onClick={() => setTheme(isDark ? "light" : "dark")}
+                className="relative ml-4 flex h-7 w-14 items-center rounded-full border border-slate-200/50 bg-slate-100 p-0.5 transition-colors duration-300 dark:border-white/10 dark:bg-white/10"
                 aria-label="Toggle theme"
               >
-                <AnimatePresence mode="wait">
-                  {theme === "dark" ? (
-                    <motion.div
-                      key="sun"
-                      initial={{ rotate: -90, opacity: 0 }}
-                      animate={{ rotate: 0, opacity: 1 }}
-                      exit={{ rotate: 90, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Sun size={18} />
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      key="moon"
-                      initial={{ rotate: 90, opacity: 0 }}
-                      animate={{ rotate: 0, opacity: 1 }}
-                      exit={{ rotate: -90, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Moon size={18} />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                <Sun size={12} className="absolute left-1.5 text-amber-500" />
+                <Moon size={12} className="absolute right-1.5 text-slate-400" />
+                <motion.div
+                  className="relative z-10 flex h-6 w-6 items-center justify-center rounded-full bg-white shadow-sm dark:bg-surface-900"
+                  animate={{ x: isDark ? 26 : 0 }}
+                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                />
               </button>
             )}
           </div>
 
           {/* Mobile controls */}
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-3 md:hidden">
             {mounted && (
               <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="rounded-lg p-2 text-slate-500 transition-colors hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-white/5"
+                onClick={() => setTheme(isDark ? "light" : "dark")}
+                className="relative flex h-7 w-14 items-center rounded-full border border-slate-200/50 bg-slate-100 p-0.5 transition-colors duration-300 dark:border-white/10 dark:bg-white/10"
                 aria-label="Toggle theme"
               >
-                {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+                <Sun size={12} className="absolute left-1.5 text-amber-500" />
+                <Moon size={12} className="absolute right-1.5 text-slate-400" />
+                <motion.div
+                  className="relative z-10 flex h-6 w-6 items-center justify-center rounded-full bg-white shadow-sm dark:bg-surface-900"
+                  animate={{ x: isDark ? 26 : 0 }}
+                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                />
               </button>
             )}
             <button
