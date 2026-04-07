@@ -132,9 +132,9 @@ export const aboutContent: AboutContent = {
   ],
   stats: [
     { value: "3+", label: "Years Experience" },
-    { value: "5+", label: "Projects Shipped" },
+    { value: "20+", label: "Projects Shipped" },
     { value: "2", label: "Research Papers" },
-    { value: "Zürich", label: "Based In" },
+    { value: "Lausanne", label: "Based In" },
   ],
 };
 
@@ -331,7 +331,7 @@ export const educationEntries: EducationEntry[] = [
   {
     institution: "EPFL",
     degree: "MSc Data Science (Exchange)",
-    gpa: "5.1 / 6.0",
+    gpa: "5.5 / 6.0",
     period: "Sep 2025 - Present",
     location: "Lausanne, Switzerland",
     courses: [
@@ -345,7 +345,7 @@ export const educationEntries: EducationEntry[] = [
   {
     institution: "University of Basel",
     degree: "MSc Data Science",
-    gpa: "5.0 / 6.0",
+    gpa: "5.2 / 6.0",
     period: "Sep 2024 - Jul 2025",
     location: "Basel, Switzerland",
     courses: [
@@ -470,7 +470,7 @@ export const contactInfo: ContactInfo = {
   email: "dheerazchavali@gmail.com",
   linkedin: "https://www.linkedin.com/in/dheerazchavali/",
   github: "https://github.com/dheeraz07",
-  location: "Vaud, Switzerland",
+  location: "Lausanne, Switzerland",
   tagline:
     "Open to internship opportunities in Quant Research, ML Engineering, Data Science",
 };
