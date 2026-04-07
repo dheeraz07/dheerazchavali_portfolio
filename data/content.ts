@@ -84,7 +84,7 @@ export interface SiteMetadata {
 
 // ─── Site Metadata ────────────────────────────────────────────
 export const siteMetadata: SiteMetadata = {
-  title: "Shanmukha Sai Dheeraz Chavali — Data Scientist & ML Engineer",
+  title: "Shanmukha Sai Dheeraz Chavali - Data Scientist & ML Engineer",
   description:
     "MSc Data Science @ ETH Zürich & EPFL · Building intelligent systems at the intersection of ML, quantitative finance, and scalable data engineering.",
   url: "https://www.dheerazchavali.com",
@@ -122,11 +122,12 @@ export const aboutContent: AboutContent = {
   bio: [
     "I am a Data Science MSc student jointly at ETH Zürich and EPFL, specializing in machine learning, NLP, and large-scale data systems. My work spans from building enterprise-grade RAG pipelines and LLM evaluation frameworks to designing predictive models for financial risk and quantitative research.",
     "With 3+ years of industry experience at Accenture, Philip Morris International, and the University of Basel, I have shipped production ML systems on AWS, built graph-based knowledge retrieval engines, and led cross-functional analytics projects that drove measurable business impact.",
-    "I am passionate about the convergence of AI and quantitative finance — designing systems that are not only technically rigorous but also deliver real-world value at scale.",
+    "I am passionate about the convergence of AI and quantitative finance - designing systems that are not only technically rigorous but also deliver real-world value at scale.",
   ],
   currentBadges: [
     "ETH Zürich",
     "EPFL",
+    "University of Basel",
     "Philip Morris International",
   ],
   stats: [
@@ -142,7 +143,7 @@ export const experienceEntries: ExperienceEntry[] = [
   {
     company: "Philip Morris International",
     role: "Data Science & AI Engineer Intern",
-    period: "Mar 2026 – Present",
+    period: "Mar 2026 - Present",
     location: "Vaud, Switzerland",
     bullets: [
       "Architecting enterprise-scale RAG pipeline on AWS Bedrock with semantic chunking and custom re-ranking, reducing hallucination rates by ~40%",
@@ -153,7 +154,7 @@ export const experienceEntries: ExperienceEntry[] = [
   {
     company: "University of Basel",
     role: "Research & Teaching Assistant",
-    period: "Feb 2025 – Jan 2026",
+    period: "Feb 2025 - Jan 2026",
     location: "Basel, Switzerland",
     bullets: [
       "Spearheading interdisciplinary AI-humanities research integrating LLMs into historical scholarship",
@@ -164,7 +165,7 @@ export const experienceEntries: ExperienceEntry[] = [
   {
     company: "University of Basel (SNSF Project)",
     role: "Research Assistant",
-    period: "Nov 2024 – Feb 2025",
+    period: "Nov 2024 - Feb 2025",
     location: "Basel, Switzerland",
     bullets: [
       "Developed scalable NLP pipelines (HuggingFace, spaCy) for sentiment analysis and topic modeling",
@@ -175,7 +176,7 @@ export const experienceEntries: ExperienceEntry[] = [
   {
     company: "Accenture",
     role: "Advanced Application Engineering Sr. Analyst",
-    period: "Feb 2022 – Aug 2024",
+    period: "Feb 2022 - Aug 2024",
     location: "Bengaluru, India",
     bullets: [
       "Built predictive analytics pipeline on AWS (S3, Glue, Redshift, SageMaker) generating $60K/quarter savings",
@@ -187,7 +188,7 @@ export const experienceEntries: ExperienceEntry[] = [
   {
     company: "Indium Software",
     role: "Junior Data Engineer",
-    period: "May 2021 – Dec 2021",
+    period: "May 2021 - Dec 2021",
     location: "Chennai, India",
     bullets: [
       "Designed hybrid vector-graph search system with 85% precision improvement",
@@ -250,7 +251,7 @@ export const skillCategories: SkillCategory[] = [
     title: "Programming Languages",
     icon: "code",
     skills: [
-      { name: "Python", description: "Primary language for ML, data engineering, and research — 5+ years of production use" },
+      { name: "Python", description: "Primary language for ML, data engineering, and research - 5+ years of production use" },
       { name: "R", description: "Statistical computing and data visualization for academic research" },
       { name: "Java", description: "Object-oriented development for enterprise applications and data pipelines" },
       { name: "C++", description: "High-performance computing and algorithm-intensive applications" },
@@ -262,14 +263,14 @@ export const skillCategories: SkillCategory[] = [
     title: "Machine Learning & AI",
     icon: "brain",
     skills: [
-      { name: "PyTorch", description: "Deep learning research and production model training — CNNs, RNNs, Transformers" },
+      { name: "PyTorch", description: "Deep learning research and production model training - CNNs, RNNs, Transformers" },
       { name: "TensorFlow", description: "End-to-end ML pipelines from prototyping to TFServing deployment" },
       { name: "Scikit-learn", description: "Classical ML models, feature engineering, and model evaluation workflows" },
-      { name: "XGBoost", description: "Gradient boosting for tabular data — predictive maintenance and risk models" },
+      { name: "XGBoost", description: "Gradient boosting for tabular data - predictive maintenance and risk models" },
       { name: "HuggingFace", description: "Fine-tuning and deploying transformer models for NLP and text generation" },
       { name: "LangChain", description: "Building RAG pipelines, agent workflows, and LLM-powered applications" },
       { name: "RAG Systems", description: "Semantic chunking, re-ranking, and knowledge base retrieval at enterprise scale" },
-      { name: "spaCy", description: "Production NLP pipelines — NER, dependency parsing, and text classification" },
+      { name: "spaCy", description: "Production NLP pipelines - NER, dependency parsing, and text classification" },
       { name: "Transformers", description: "Attention-based architectures for NLP, vision, and multimodal tasks" },
       { name: "LSTM / RNNs", description: "Sequence modeling for time-series forecasting and temporal pattern recognition" },
     ],
@@ -322,7 +323,7 @@ export const educationEntries: EducationEntry[] = [
   {
     institution: "ETH Zürich",
     degree: "MSc Data Science (Special Student)",
-    period: "Feb 2026 – Present",
+    period: "Feb 2026 - Present",
     location: "Zürich, Switzerland",
     courses: ["Large Language Models", "Scientific Computing", "Data Modeling & Databases"],
     current: true,
@@ -331,7 +332,7 @@ export const educationEntries: EducationEntry[] = [
     institution: "EPFL",
     degree: "MSc Data Science (Exchange)",
     gpa: "5.1 / 6.0",
-    period: "Sep 2025 – Present",
+    period: "Sep 2025 - Present",
     location: "Lausanne, Switzerland",
     courses: [
       "Foundation Models & Gen AI",
@@ -345,7 +346,7 @@ export const educationEntries: EducationEntry[] = [
     institution: "University of Basel",
     degree: "MSc Data Science",
     gpa: "5.0 / 6.0",
-    period: "Sep 2024 – Jul 2025",
+    period: "Sep 2024 - Jul 2025",
     location: "Basel, Switzerland",
     courses: [
       "Machine Learning",
@@ -358,7 +359,7 @@ export const educationEntries: EducationEntry[] = [
     institution: "SASTRA University",
     degree: "BTech Electronics & Communication Engineering",
     gpa: "5.1 / 6.0",
-    period: "Jul 2017 – Jun 2021",
+    period: "Jul 2017 - Jun 2021",
     location: "Thanjavur, India",
     courses: [
       "Probability Theory",

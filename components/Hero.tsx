@@ -159,7 +159,7 @@ export default function Hero() {
           </button>
         </motion.div>
 
-        {/* Scroll indicator — bottom left */}
+        {/* Scroll indicator - bottom left */}
         <motion.div
           variants={itemVariants}
           className="absolute bottom-8 left-6 sm:left-8"

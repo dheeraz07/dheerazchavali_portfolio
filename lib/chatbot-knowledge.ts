@@ -10,7 +10,7 @@ import {
 
 /**
  * Builds a comprehensive knowledge base string from all portfolio content.
- * Used as context for the chatbot — either injected into an LLM prompt
+ * Used as context for the chatbot - either injected into an LLM prompt
  * or used for local keyword-based matching.
  */
 export function buildKnowledgeBase(): string {
@@ -108,7 +108,7 @@ export function getLocalAnswer(query: string): KnowledgeMatch {
   if (/education|university|degree|school|study|studying|academic|gpa|course|eth|epfl|basel|sastra/i.test(q)) {
     const eduLines = educationEntries.map(
       (e) =>
-        `**${e.institution}** — ${e.degree}${e.gpa ? ` (GPA: ${e.gpa})` : ""}\n${e.period} · ${e.location}\nCourses: ${e.courses.join(", ")}`
+        `**${e.institution}** - ${e.degree}${e.gpa ? ` (GPA: ${e.gpa})` : ""}\n${e.period} · ${e.location}\nCourses: ${e.courses.join(", ")}`
     );
     return {
       answer: `Here's Dheeraz's academic background:\n\n${eduLines.join("\n\n")}`,
@@ -162,7 +162,7 @@ export function getLocalAnswer(query: string): KnowledgeMatch {
   // Looking for / goals / interests
   if (/looking for|goal|interest|want|seeking|opportunity|future|aspir/i.test(q)) {
     return {
-      answer: `Dheeraz is currently open to opportunities in **Quant Research**, **ML Engineering**, and **Data Science**. He's particularly interested in roles at the intersection of AI and quantitative finance — building systems that are technically rigorous and deliver real-world impact at scale.\n\nHe is currently completing his MSc in Data Science at ETH Zürich & EPFL while interning at Philip Morris International on enterprise-scale LLM/RAG systems.`,
+      answer: `Dheeraz is currently open to opportunities in **Quant Research**, **ML Engineering**, and **Data Science**. He's particularly interested in roles at the intersection of AI and quantitative finance - building systems that are technically rigorous and deliver real-world impact at scale.\n\nHe is currently completing his MSc in Data Science at ETH Zürich & EPFL while interning at Philip Morris International on enterprise-scale LLM/RAG systems.`,
       confidence: 0.9,
     };
   }

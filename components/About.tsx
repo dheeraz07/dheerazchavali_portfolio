@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { aboutContent } from "@/data/content";
 import SectionWrapper from "./SectionWrapper";
@@ -51,10 +52,14 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <div className="relative h-72 w-72 overflow-hidden rounded-2xl border-2 border-accent/20 sm:h-80 sm:w-80">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-indigo-500/5 to-cyan-500/10" />
-              <div className="flex h-full items-center justify-center">
-                <span className="font-display text-6xl font-bold text-accent/20">DC</span>
-              </div>
+              <Image
+                src="/profile.jpg"
+                alt="Shanmukha Sai Dheeraz Chavali"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 640px) 288px, 320px"
+                priority
+              />
               <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10" />
             </div>
             {/* Decorative dots */}

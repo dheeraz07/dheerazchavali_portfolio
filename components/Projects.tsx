@@ -36,7 +36,7 @@ export default function Projects() {
           A Collection of My Work
         </h2>
         <p className="section-subheading mx-auto text-center">
-          From enterprise ML pipelines to cutting-edge research — systems built for real-world impact
+          From enterprise ML pipelines to cutting-edge research - systems built for real-world impact
         </p>
       </div>
 
